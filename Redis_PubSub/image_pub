@@ -71,7 +71,7 @@ def image_enqueue(image_path):
     # Streaming schema
     d = {"id": str(k), "path": image_path, "image": image}
     #DB.xadd(settings.IMAGE_STREAMING, d)
-    queue.publish('channel_1',d)
+    queue.publish('channel_1',image)
     print("Total %d ms" % int(round((time.time() - start_time) * 1000)))
 
 
